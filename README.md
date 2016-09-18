@@ -52,3 +52,11 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
+
+微信公众号初始化指南
+```
+1.创建微信公众号（https://mp.weixin.qq.com/）
+2.在开发->基本配置->填写服务器配置 中配置如下信息
+URL： 服务器域名+ /xuechaozhang/weight/frontend/web/index.php?r=index/index
+Token：share_time （如果修改的话需要同时修改代码中的这个关键字）
+```
