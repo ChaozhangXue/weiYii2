@@ -114,8 +114,9 @@ class SendController extends Controller
         // 2.组装数组
         $url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={$access_token}";
         // 3.将数组成json
-        $ids = [Yii::$app->params['zhaoOpenId'],Yii::$app->params['xueOpenId']];
-        foreach($ids as $id){
+        $id = Yii::$app->params['zhaoOpenId'];
+//        $ids = [Yii::$app->params['zhaoOpenId'],Yii::$app->params['xueOpenId']];
+//        foreach($ids as $id){
             $content = [
                 'touser' => $id,
                 'template_id' => 'hylKxS6wuktvJKqjL1MgM30vhtWxEl7f7rduJBS7G0w',
@@ -123,7 +124,7 @@ class SendController extends Controller
             ];
             $content = json_encode($content);
             $this->http_curl($url, 'post', 'json', $content);
-        }
+//        }
     }
     /*
      * 获取微信access token
